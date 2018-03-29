@@ -1,0 +1,17 @@
+#!/bin/bash
+# Initialising the GPIOs on the expansion board
+sudo nvsctl -v init
+sleep .2
+
+# switch NV08C to NMEA mode, which should be default
+sudo nvsmode -v nmea
+sleep 1
+
+# confirm PONAV - Navigation Solution Paramerters
+sudo nmeacmd -v PONAV 2 00 1 30 0
+sleep .2
+
+
+# Parseing Satellites
+sudo nmeaparse -v
+sleep .2

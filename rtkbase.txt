@@ -1,0 +1,28 @@
+#!/bin/sh
+# rtkbase - RTKLIB base station setup with RasPiGNSS and str2str
+# (C) Dr. Franz Fasching 2016
+# $Id$
+#
+program=`basename $0`
+
+# vars
+d= v= q= n=
+conffile="/etc/$program.conf"
+#
+intype="serial"
+instream="ttyAMA0:230400:8:O:1"
+informat="nvs"
+#outtype="ntrips"
+outtype="tcpsvr"
+outstream=":5800"
+#outformat="rtcm3"
+#messages="1002,1006,1008,1010,1013,1019,1020,1033,1077,1087,1097,1107"
+outformat=
+messages="1002,1006,1008,1010,1019,1020,1033"
+poslat=00.000000
+poslon=00.000000
+poshgt=0
+trace=
+noinit=1
+
+.......Dr.Fasching Perl-Code....

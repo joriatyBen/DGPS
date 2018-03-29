@@ -1,0 +1,66 @@
+#!/bin/bash
+#Initialising the GPIOs on the expansion board
+sudo nvsctl -v init
+sleep .2
+
+# switch NV08C to BINR mode
+sudo nvsmode -v binr
+sleep .2
+
+# reboot without erasing saved parameters
+sudo binrcmd -v WARMSTART
+sleep .2
+
+# set navgation rate in Hz (1,2,5,10 Hz)
+sudo binrcmd -v NAVRATE 2
+sleep .2
+
+# differential correction SBAS w/ RTCA troposphere model
+sudo binrcmd -v DIFFCOR 2 1
+sleep 1
+
+# raw data output in intervals of dezi-secs (100ms)
+# 1 -> 10Hz, 2 -> 5Hz, 5 -> 2Hz, 10 -> 1Hz (inverse
+# setting but must be the same or greater than NAVRATE !!)
+sudo binrcmd -v RAWDATA 5
+sleep .2
+
+# bit information transmitted by satellites
+sudo binrcmd -v BITINF 1
+sleep .2
+
+# optional cmds i tried
+#sudo binrcmd -v SATDOP 2
+#sleep .2
+
+#sudo binrcmd -v SELGNSS 1
+#sleep .2
+
+#sudo binrcmd -v BINROPMODE 1
+#sleep .2
+
+# reboot without erasing saved parameters
+sudo binrcmd -v WARMSTART
+sleep .2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
