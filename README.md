@@ -1,5 +1,5 @@
 # DGPS
-The construction consists two raspberry pis, model 3 with an Aldebaran Modul from Dr.Fasching and each a Tallysman tw-2410 antenna.The goal is to realize a system with a moving-base and a rover modul with RTKLIB. The Base should get its own position via GPS without giving position coordinates during or before the moving process. The Rover should get the data from the base modul and print the relative distance. 
+The construction consists two raspberry pis, model 3 with an Aldebaran Modul from Dr.Fasching and each a Tallysman tw-2410 antenna.The goal is to realize a system with a moving-base and a rover modul with RTKLIB. The Base should get its own position via GPS without giving position coordinates during or before the moving process. The rover should get the data from the base modul and print the relative distance. 
 
 At this state i have the normal fixed-base, moving-rover solution. 
 It´s also not clear why some satellites are chosen from the system/rtklib and why others are not, although i receive good signals.
