@@ -11,8 +11,8 @@ sleep .2
 sudo binrcmd -v WARMSTART
 sleep .2
 
-# set navgation rate in Hz (1,2,5,10 Hz)
-sudo binrcmd -v NAVRATE 2
+# set navgation rate in Hz (1,2,5,10 Hz), Standard = 2 Hz
+sudo binrcmd -v NAVRATE 5
 sleep .2
 
 # differential correction SBAS w/ RTCA troposphere model
@@ -21,8 +21,8 @@ sleep 1
 
 # raw data output in intervals of dezi-secs (100ms)
 # 1 -> 10Hz, 2 -> 5Hz, 5 -> 2Hz, 10 -> 1Hz (inverse
-# setting but must be the same or greater than NAVRATE !!)
-sudo binrcmd -v RAWDATA 5
+# setting but must be the same or greater than NAVRATE !!) Standard = 5
+sudo binrcmd -v RAWDATA 2
 sleep .2
 
 # bit information transmitted by satellites
